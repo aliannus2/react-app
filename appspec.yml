@@ -6,6 +6,12 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/server
+    
+ permissions:
+  - object: /
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
 
 hooks:
   # During the BeforeInstall deployment lifecycle event, run the commands
