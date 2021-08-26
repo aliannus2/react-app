@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # here we just use npm to run the build
-cd /var/www/
+cd /home/ubuntu/server
 echo building application...
 sudo npm run build
