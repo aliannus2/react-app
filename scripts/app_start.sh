@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/ubuntu/server/react-app-devops
+cd /home/ubuntu/server
 npm start
