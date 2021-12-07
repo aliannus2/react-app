@@ -15,3 +15,5 @@ jobs:
       run: echo ::set-output name=version::$(./project-fetcher.sh)
     - name: Test output
       run: echo ${{ steps.vars.outputs.version }}
+    - name: Test URL
+      run: echo google.com/${{ steps.vars.outputs.version }}
