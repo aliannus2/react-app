@@ -8,4 +8,5 @@ jobs:
     - name: Run script file
       run: |
          chmod +x ./project-fetcher.sh
+         ./project-fetcher.sh
       shell: bash
