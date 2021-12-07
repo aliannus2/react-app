@@ -10,3 +10,8 @@ jobs:
          chmod +x ./project-fetcher.sh
          ./project-fetcher.sh
       shell: bash
+    - name: Get version
+      id: vars
+      run: echo ::set-output name=version::$(./project-fetcher.sh)
+    - name: Test output
+      run: echo ${{ steps.vars.outputs.version }}
