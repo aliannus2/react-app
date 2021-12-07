@@ -16,4 +16,4 @@ jobs:
     - name: Test output
       run: echo ${{ steps.vars.outputs.version }}
     - name: Test URL
-      run: echo google.com/${{ steps.vars.outputs.version }}
+      run: echo https://google.com/${{ steps.vars.outputs.version }}
