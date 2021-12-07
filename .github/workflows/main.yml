@@ -4,6 +4,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Run script file
       run: |
          chmod +x ./project-fetcher.sh
