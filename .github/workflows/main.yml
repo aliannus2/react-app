@@ -15,3 +15,8 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Get version
+        id: vars
+        run: echo ::set-output name=version::$(cat VERSION)
+      - name: Test output
+        run: echo ${{ steps.vars.outputs.version }}
