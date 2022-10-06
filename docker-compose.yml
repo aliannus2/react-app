@@ -1,10 +1,9 @@
 version: "3"
 services:
-
-  nitro-service:
+  react-app-devops:
     image: 168237867270.dkr.ecr.us-east-1.amazonaws.com/nitro-web-admin-dev:latest
-    hostname: nitro-web-admin
-    container_name: nitro-web-admin
+    hostname: react-app-devops
+    container_name: react-app-devops
     ports:
     - 8090:80
     restart: always
