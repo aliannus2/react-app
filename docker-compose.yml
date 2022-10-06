@@ -1,0 +1,10 @@
+version: "3"
+services:
+
+  nitro-service:
+    image: 168237867270.dkr.ecr.us-east-1.amazonaws.com/nitro-web-admin-dev:latest
+    hostname: nitro-web-admin
+    container_name: nitro-web-admin
+    ports:
+    - 8090:80
+    restart: always
