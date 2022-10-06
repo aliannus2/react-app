@@ -1,20 +1,12 @@
-# pull official base image
-FROM node:latest
+FROM 168237867270.dkr.ecr.us-east-1.amazonaws.com/node-16 as builder
+WORKDIR "/react-app"
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-# set working directory
-WORKDIR /app
-
-# add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
-# install app dependencies
-COPY package.json ./
-COPY package-lock.json ./
-RUN npm install --silent
-RUN npm install react-scripts@3.4.1 -g --silent
-
-# add app
-COPY . ./
-
-# start app
-CMD ["npm", "start"]
+FROM 168237867270.dkr.ecr.us-east-1.amazonaws.com/nginx
+EXPOSE 80
+COPY --from=builder /react-app/build /usr/share/nginx/html
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+CMD ["nginx","-g","daemon off;"]
